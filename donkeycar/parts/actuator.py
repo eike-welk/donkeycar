@@ -78,6 +78,7 @@ class PWMThrottle:
         self.zero_pulse = zero_pulse
 
         # send zero pulse to calibrate ESC
+        time.sleep(0.2) # "Tamiya TBLE-02" makes a little leap otherwise
         self.controller.set_pulse(self.zero_pulse)
         time.sleep(1)
 
